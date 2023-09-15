@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            width: 100vw;
+            background-color: black;
+        }
+        .drop{
+            height: 300px;
+            width: 300px;
+            background-color: black;
+            transform: rotate(45deg);
+            border-top-right-radius: 50%;
+            border-bottom-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+            box-shadow: 0 0 5px aquamarine,
+            0 0 10px inset aquamarine,
+            0 0 20px  inset aquamarine,
+            0 0 40px  inset aquamarine,
+            0 0 80px  inset aquamarine,
+            0 0 160px inset aquamarine;
+            cursor: pointer;
+            border: 1x solid whitesmoke;
+            transition: 1s;
+        }
+        .drop:hover{
+            box-shadow: 0 0 5px aquamarine,
+            0 0 10px inset aquamarine,
+            0 0 20px  inset aquamarine,
+            0 0 40px  inset aquamarine,
+            0 0 80px  inset aquamarine,
+            0 0 160px inset aquamarine;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="drop"></div>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+/* #parent{
+    width: 1000px;
+    height: 800px;
+    border-color:yellow;
+    border: 10px outset cornflowerblue;
+    justify-content: center;
+    display: flex;
+    background-color: deeppink;
+} */
+/* #child{
+    width: 500px;
+    height: 500px;
+   background-color: rgb(154, 154, 194);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-image: url(.//CSS/images/baby.jpg);
+   border: 10px inset crimson;
+   
+   transition:all;
+} */
+/* #child:hover{
+    background-color:gold;
+    transform: scale3d(90);
+    transition-property: all 10s; 
+    background-image: url(./CSS/images/1654881267498.jpg); 
+    border: 500px solid gray;
+    background-size: contain;
+    transition: all 10s
+} */
+div{
+    width: 500px;
+    height: 500px;
+    background-color: rgb(11, 229, 95);
+    /* transition:width 10s ;
+    transition:height 10s ; */
+    border: 5px solid black;
+    background-image: url(./CSS/images/baby.jpg);
+    background-repeat: no-repeat;
+   background-clip:content-box;
+    border-radius: 800px;
+    background-size: contain;
+    
+}
+ div:hover{
+    width: 900px;
+    height: 900px;
+    transition: all 10s;
+    background-image: url(./CSS/images/1629482513997-01.jpg);
+    background-size: cover;
+    transition-property: all 10s;
+    background-repeat:no-repeat;
+    background-position: top right;
+    transform: rotateX(180deg);
+ }  
