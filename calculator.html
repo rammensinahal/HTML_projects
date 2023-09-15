@@ -1,0 +1,259 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator</title>
+<style>
+body
+{
+padding: 0;
+margin: 0;
+font-family: Arial, Helvetica, sans-serif;
+}
+#calci
+{
+background-image: linear-gradient(white,white,white,gray,black,black);
+border: 5px solid black;
+width: 30%;
+height: auto;
+margin: 20px auto;
+}
+h1
+{
+text-align: center;
+margin: 15px;
+}
+input[type='text'] /*Simple Attribute Selector*/
+{
+color: black;
+background-image: linear-gradient(gray,white);
+width: 99%;
+height: 60px;
+border-color: black;
+font-size: 30px;
+font-family: cursive;
+border: 1px solid black;
+}
+#OnOff
+{
+font-family: fantasy;
+font-size: 15px;
+/* border: 1px solid black;
+border-bottom: white;
+background-image: linear-gradient(black,white,white); */
+}
+#ce
+{
+text-align: right;
+}
+button
+{
+background-image: radial-gradient(white,gray);
+border-radius: 10%;
+height: auto;
+width: 23%;
+margin: 2px;
+font-family: serif;
+font-size: 30px;
+font: bold;
+}
+button:hover
+{
+background-image: radial-gradient(white,black);
+color: black;
+}
+</style>
+<script>
+var isTurnOn = false;
+function turnOn()
+{
+isTurnOn = true;
+document.getElementById('display').disabled=false;
+}
+function turnOff()
+{
+isTurnOn = false;
+document.getElementById('display').value="";
+document.getElementById('display').disabled=true;
+}
+function displayInInput(clickedElement)
+{
+if(isTurnOn)
+{
+let clickedValue = clickedElement.innerText;
+console.log(clickedValue);
+let curValue = document.getElementById('display').value;
+document.getElementById('display').value = curValue + clickedValue;
+}
+else
+{
+alert("please Turn ON calculator")
+}
+}
+function calculate()
+{
+let expression = document.getElementById('display').value;
+let result = eval(expression);
+document.getElementById('display').value = result;
+}
+function clearAll()
+{
+document.getElementById('display').value = '';
+}
+function clearOneChar()
+{
+let expression = document.getElementById('display').value;
+let size = expression.length;
+expression = expression.substring(0, size-1);
+document.getElementById('display').value = expression;
+}
+</script>
+</head>
+<body>
+<h1>Calculator</h1>
+<div id="calci">
+<input type="text" id="display">
+<div class="row"id="OnOff">
+<input type="radio" name="turnon" onclick="turnOn()"><label>ON</label>
+<input type="radio" name="turnon" onclick="turnOff()"><label>OFF</label>
+</div>
+<div class="row" id="ce">
+<button onclick="clearOneChar()">C</button>
+<button onclick="clearAll()">CE</button>
+</div>
+<div class="row">
+<button onclick="displayInInput(this)">1</button>
+<button onclick="displayInInput(this)">2</button>
+<button onclick="displayInInput(this)">3</button>
+<button onclick="displayInInput(this)">+</button>
+</div>
+<div class="row">
+<button onclick="displayInInput(this)">4</button>
+<button onclick="displayInInput(this)">5</button>
+<button onclick="displayInInput(this)">6</button>
+<button onclick="displayInInput(this)">-</button>
+</div>
+<div class="row">
+<button onclick="displayInInput(this)">7</button>
+<button onclick="displayInInput(this)">8</button>
+<button onclick="displayInInput(this)">9</button>
+<button onclick="displayInInput(this)">*</button>
+</div>
+<div class="row">
+<button onclick="displayInInput(this)">0</button>
+<button onclick="displayInInput(this)">.</button>
+<button onclick="displayInInput(this)">/</button>
+<button onclick="calculate()">=</button>
+</div>
+</div> -->
+
+<!-- !DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Clock</title>
+<style>
+body
+{
+background: #aeaeae;
+font-family: Arial, Helvetica, sans-serif;
+}
+.container
+{
+border: 2px solid #fff;
+width: 50%;
+text-align: center;
+margin: 15px auto;
+}
+</style>
+<script>
+function displayDateAndTime()
+{
+let curDateObj = new Date();
+let curHours = curDateObj.getHours();
+let curMin = curDateObj.getMinutes();
+let curSec = curDateObj.getSeconds();
+let curYear = curDateObj.getFullYear();
+let curMon = curDateObj.getMonth() + 1;
+let curDate = curDateObj.getDate();
+document.getElementById('hours').innerText = curHours;
+document.getElementById('min').innerText = curMin;
+document.getElementById('sec').innerText = curSec;
+document.getElementById('date').innerText = curDate;
+document.getElementById('month').innerText = curMon;
+document.getElementById('year').innerText = curYear;
+let curDay = curDateObj.getDay();
+switch(curDay)
+{
+case 0: curDay = "SUNDAY"
+break;
+case 1: curDay = "MONDAY"
+break;
+case 2: curDay = "TUESDAY"
+break;
+case 3: curDay = "WEDNESDAY"
+break;
+case 4: curDay = "THURESDAY"
+break;
+case 5: curDay = "FRIDAY"
+break;
+case 6: curDay = "SATURDAY"
+break;
+}
+document.getElementById('day').innerText = curDay;
+}
+</script>
+</head>
+<body onload="setInterval(displayDateAndTime,1000)">
+<h1 style="text-align: center;">Digital clock</h1>
+<div class="container">
+<h1>
+<span id="hours">00</span> :
+<span id="min">00</span> :
+<span id="sec">00</span>
+</h1>
+</div>
+<div class="container">
+<h1>
+<span id="date">00</span> :
+<span id="month">00</span> :
+<span id="year">0000</span>
+</h1>
+<h2 id="day">some day</h2>
+</div>
+</body>
+</html> -->
+
+
+
+<!-- !DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Color</title>
+<script>
+function generateRandomColor()
+{
+let arr = [0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f'];
+let randomColor = '#';
+for(let i=1 ; i<=6 ; i++)
+{
+let index = Math.floor(Math.random()*16);
+randomColor += arr[index];
+}
+console.log(randomColor);
+document.getElementsByTagName('body')[0].style.backgroundColor = randomColor;
+}
+</script>
+</head>
+<body>
+<h1>Generate Random Color</h1>
+<button onclick="generateRandomColor()">Get Random Color</button>
+</body>
+</html>

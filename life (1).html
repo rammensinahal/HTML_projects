@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life</title>
+    <style>
+  body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: black;
+            overflow: hidden;
+            min-height: 100vh;
+
+        }
+        .container{
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+.ring{
+    width: 200px;
+    height: 200px;
+    border: 0px solid #000;
+    border-radius: 50%;
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+.ring:nth-child(1){
+    border-bottom-width: 8px;
+    border-color: rgb(229, 45, 45);
+    transform-style: preserve-3d;
+    transform: perspective(800px) rotateY(-65deg) skewX(45deg);
+    animation: rotate1 4s linear infinite;
+}
+@keyframes rotate1 {
+    0%{
+        transform: perspective(800px) rotateY(65deg) skewX(-45deg) rotate(0deg);
+    }
+    50%{
+        border-style: dashed ;
+        }
+    100%{
+        transform: perspective(800px) rotateY(65deg) skewX(-45deg) rotate(360deg);
+    }
+}
+.ring:nth-child(2){
+    border-bottom-width: 8px;
+    border-color: rgb(45, 229, 88);
+    transform-style: preserve-3d;
+    transform: perspective(800px) rotateY(65deg) skewX(-45deg);
+    animation: rotate2 2s linear infinite;
+
+}
+@keyframes rotate2 {
+    0%{
+        transform: perspective(800px) rotateY(-65deg) skewX(45deg) rotate(0deg);
+    }
+    50%{
+        border-style: dashed ;
+        }
+    100%{
+        transform: perspective(800px) rotateY(-65deg) skewX(45deg) rotate(360deg);
+    }
+}
+    .ring:nth-child(3){
+    border-bottom-width: 8px;
+    border-color: rgb(203, 231, 26);
+    transform-style: preserve-3d;
+    transform: perspective(800px) rotateY(-90deg) skewX(45deg);
+    animation: rotate 3s linear infinite reverse;
+    
+}
+@keyframes rotate3 {
+    0%{
+        transform: perspective(800px) rotateY(90deg) skewY(90deg) rotate(0deg);
+    }
+    50%{
+        border-style: dashed ;
+    }
+    100%{
+        transform: perspective(800px) rotateY(90deg) skewY(90deg) rotate(360deg);
+    }
+
+    
+}
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <p>Life Loading....</p>
+    </div>
+</body>
+</html>
